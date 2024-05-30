@@ -1,5 +1,7 @@
 {
     "scan":{
-        "targetIp" : "192.168.60.129"
+        "targetIp" : "192.168.60.129",
+        "startPort" : 1,
+        "endPort" : 9999
     }
 }

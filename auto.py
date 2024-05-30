@@ -30,8 +30,8 @@ if __name__ == "__main__":
     target_ip = data['scan']['targetIp'] # Replace with the target host
     print(f'The target IP is: {target_ip}')
 
-    start_port = 1
-    end_port = 9999
+    start_port = data['scan']['startPort']
+    end_port = data['scan']['endPort']
 
     open_ports = port_scan(target_ip, start_port, end_port)
     if open_ports:
