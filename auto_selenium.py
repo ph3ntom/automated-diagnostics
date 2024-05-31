@@ -3,7 +3,9 @@ import pyscreenshot as ImageGrab
 import time
 import json
 import pyautogui
-
+#tshark 컨트롤 가능하면 컨트롤 하자! 
+#커맨드 [수집] tshark -i {Network interface} -w {savefile name}.pcap (+ duration:10 <- 10초 동안 수집한다.)
+#커맨드 [읽기] tshark -r "{savefile name}.pcap" -Y {filter options}
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--ignore-certificate-errors')

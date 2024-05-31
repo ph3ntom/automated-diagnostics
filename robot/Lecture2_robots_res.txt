@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /mng/auth/login
+Disallow: /mng/auth/admin/list
+Disallow: /mng/auth/user/list

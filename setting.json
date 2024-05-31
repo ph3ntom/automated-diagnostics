@@ -1,6 +1,6 @@
 {
     "service_name":"Lecture2",
-    
+
     "scan":{
         "targetIp" : "192.168.60.129",
         "startPort" : 1,
@@ -17,5 +17,10 @@
         "y" : 0,
         "sizeX" : 1920,
         "sizeY" : 1080
+    },
+
+    "url_parser":{
+        "startUrl" : "http://192.168.60.129",
+        "depth" : 3
     }
 }
