@@ -3,5 +3,9 @@
         "targetIp" : "192.168.60.129",
         "startPort" : 1,
         "endPort" : 9999
+    },
+
+    "check_ssl":{
+        "targetUrl" : "https://noctuary.xyz"
     }
 }
