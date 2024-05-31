@@ -1,4 +1,6 @@
 {
+    "service_name":"Lecture2",
+    
     "scan":{
         "targetIp" : "192.168.60.129",
         "startPort" : 1,
