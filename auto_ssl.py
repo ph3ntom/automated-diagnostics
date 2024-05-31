@@ -51,7 +51,7 @@ if __name__ == "__main__":
     with open('setting.json', 'r') as file:
         data = json.load(file)
 
-    target_url = data['check_ssl']['targetUrl'] # Replace with the target host
+    target_url = data['check_ssl']['targetUrl'] 
     print(f'The targetUrl is: {target_url}')
 
     result = check_ssl(target_url)

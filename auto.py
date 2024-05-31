@@ -12,7 +12,7 @@ def check_port(host, port):
 
 def port_scan(host, start_port, end_port):
     open_ports = []
-    total_ports = end_port - start_port + 1
+    #total_ports = end_port - start_port + 1
 
     with ThreadPoolExecutor(max_workers=100) as executor:
         futures = [executor.submit(check_port, host, port) for port in range(start_port, end_port + 1)]
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     with open('setting.json', 'r') as file:
         data = json.load(file)
 
-    target_ip = data['scan']['targetIp'] # Replace with the target host
+    target_ip = data['scan']['targetIp'] 
     print(f'The target IP is: {target_ip}')
 
     start_port = data['scan']['startPort']
