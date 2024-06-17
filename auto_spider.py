@@ -4,7 +4,7 @@ import sys
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 
-sys.setrecursionlimit(3000)
+sys.setrecursionlimit(10**6)
 
 def is_valid_url(url):
     parsed = urlparse(url)
@@ -99,14 +99,15 @@ def save_tree_to_file(tree, file_path):
                 for child_url in tree[url]:
                     queue.append((child_url, depth + 4))  # 다음 깊이를 위해 4 증가
 
-# 시작 URL 및 Spidering 시작
-with open('setting.json', 'r') as file:
-        data = json.load(file)
+if __name__ == "__main__":
+    # 시작 URL 및 Spidering 시작
+    with open('setting.json', 'r') as file:
+            data = json.load(file)
 
-start_url = data['url_parser']['startUrl']
-depth = data['url_parser']['depth']
-tree = passive_spider(start_url, depth)
+    start_url = data['url_parser']['startUrl']
+    depth = data['url_parser']['depth']
+    tree = passive_spider(start_url, depth)
 
-# 트리 구조를 txt 파일로 저장
-file_name = f"./urlParser/{data['service_name']}spider_tree.txt"
-save_tree_to_file(tree, file_name)
+    # 트리 구조를 txt 파일로 저장
+    file_name = f"./urlParser/{data['service_name']}_spider_tree.txt"
+    save_tree_to_file(tree, file_name)

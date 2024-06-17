@@ -2,7 +2,7 @@
     "service_name":"Lecture2",
 
     "scan":{
-        "targetIp" : "192.168.60.129",
+        "targetIp" : "192.168.56.1",
         "startPort" : 1,
         "endPort" : 9999
     },
@@ -12,7 +12,7 @@
     },
 
     "robots":{
-        "targetUrl" : "http://192.168.60.129",
+        "targetUrl" : "http://192.168.239.3/login.html",
         "x" : 0,
         "y" : 0,
         "sizeX" : 1920,
@@ -22,5 +22,14 @@
     "url_parser":{
         "startUrl" : "http://192.168.60.129",
         "depth" : 3
+    },
+
+    "tshark":{
+        "interface" : "5",
+        "size" : 50,
+        "timeOrCount" : "-c", 
+        "_comment" : "timeOrCount의 값은 duration:10(초 기반) or -C(갯수 기반)",
+        "filterOption":["tcp.port == 80"],
+        "printOption" : ["frame.number", "ip.src","ip.dst","http.rquest","http.rsponse.code","http.cntent_type"]
     }
 }

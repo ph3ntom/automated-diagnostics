@@ -1,21 +1,21 @@
 from seleniumwire import webdriver
+from urllib.parse import urljoin
 import pyscreenshot as ImageGrab
 import time
 import json
 import pyautogui
-#tshark 컨트롤 가능하면 컨트롤 하자! 
-#커맨드 [수집] tshark -i {Network interface} -w {savefile name}.pcap (+ duration:10 <- 10초 동안 수집한다.)
-#커맨드 [읽기] tshark -r "{savefile name}.pcap" -Y {filter options}
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--ignore-certificate-errors')
 
-with open('setting.json', 'r') as file:
+with open('setting.json', encoding='utf-8') as file:
         data = json.load(file)
 
 driver = webdriver.Chrome(options=chrome_options)
+
 x = data['robots']['x']
 y = data['robots']['y']
+
 driver.set_window_position(x,y)
 driver.set_window_size(data['robots']['sizeX'], data['robots']['sizeY']) 
 
@@ -34,7 +34,7 @@ pyautogui.click(targetX, targetY)
 time.sleep(2)
 
 # robots.txt URL로 이동
-robots_url = url + "/robots.txt"
+robots_url = urljoin(url, "robots.txt")
 driver.get(robots_url)
 
 

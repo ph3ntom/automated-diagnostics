@@ -24,7 +24,7 @@ def port_scan(host, start_port, end_port):
 
 if __name__ == "__main__":
 
-    with open('setting.json', 'r') as file:
+    with open('setting.json', encoding='utf-8') as file:
         data = json.load(file)
 
     target_ip = data['scan']['targetIp'] 
