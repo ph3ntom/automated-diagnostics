@@ -49,8 +49,8 @@ def print_original_packets(input_file):
 
 if __name__ == "__main__":
 
-    with open('setting.json', 'r') as file:
-            data = json.load(file)
+    with open('setting.json', encoding='utf-8') as file:
+        data = json.load(file)
     interface = data['tshark']['interface']
     size = data['tshark']['size']
     save = f"./information_exposure/{data['service_name']}_tshark.pcap"

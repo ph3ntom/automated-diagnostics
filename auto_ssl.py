@@ -48,7 +48,7 @@ def check_ssl(url):
         return f"An error occurred: {e}"
     
 if __name__ == "__main__":
-    with open('setting.json', 'r') as file:
+    with open('setting.json', encoding='utf-8') as file:
         data = json.load(file)
 
     target_url = data['check_ssl']['targetUrl'] 
